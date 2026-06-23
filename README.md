@@ -1,8 +1,8 @@
-# Multi-Chart Infographic Reasoning 数据集 MindRecord 转换说明
+# Multi-Chart Infographic Reasoning 数据集 
 
 ## 1. 数据集简介
 
-本数据集采用 HuggingFace Dataset 格式存储，样本信息保存在 `test.parquet` 文件中，每条样本包含：
+本数据集采用 HuggingFace Dataset 格式存储，样本信息保存在 `test.parquet` 文件中，huggingface 链接为 <https://huggingface.co/datasets/xychen-zh/multi-chart-infographic-reasoning>，每条样本包含：
 
 * 图片路径（image_path）
 * 图表类型（chart_types）
@@ -16,16 +16,16 @@
 
 ```python
 {
-    'image_path': 'infographics/bee infographic/food & drink/which-burger-chain-do-you-prefer-shake-shack-five-guys-infographic.jpg',
-    'chart_types': ['Card Chart'],
-    'category': 'food & drink',
+    'image_path': 'infographics/bee infographic/animals/where-the-most-shark-attacks-occur-in-the-united-states.jpg',
+    'chart_types': ['Radial Chart', 'Map Chart', 'Tabular Chart', 'Bar Chart'],
+    'category': 'animals',
     'source': 'bee infographic',
-    'sub_question 1': 'What is the absolute difference of total carbs (in grams) between the Double Shack Burger and the Cheeseburger?',
-    'answer 1': '14',
-    'question_type 1': 'Difference',
-    'sub_question 2': "What is Double Shack Burger's calories?",
-    'answer 2': '760',
-    'question_type 2': 'Value',
+    'sub_question 1': 'Which U.S. county has ever recorded the highest number of shark attacks?',
+    'answer 1': 'Volusia, FL',
+    'question_type 1': 'Extrema',
+    'sub_question 2': "For the county from Sub-question 1, what is the total number of shark attacks recorded in its located state over the 10-year period?",
+    'answer 2': '242',
+    'question_type 2': 'Count',
     ...
 }
 ```
@@ -54,13 +54,13 @@
 ```python
 {
     "image": bytes,
-    "image_path": "...jpg",
-    "chart_types": "[\"Card Chart\"]",
-    "category": "food & drink",
+    "image_path": "infographics/bee infographic/animals/where-the-most-shark-attacks-occur-in-the-united-states.jpg",
+    "chart_types": "['Radial Chart', 'Map Chart', 'Tabular Chart', 'Bar Chart']",
+    "category": "animals",
     "source": "bee infographic",
-    "questions": "[\"Q1\", \"Q2\", \"Q3\"]",
-    "answers": "[\"A1\", \"A2\", \"A3\"]",
-    "question_types": "[\"Difference\", \"Value\", \"Extrema\"]"
+    "questions": "['Q1', 'Q2', ...]",
+    "answers": "['A1', 'A2', ...]",
+    "question_types": "['Extrema', 'Count', ...]"
 }
 ```
 
