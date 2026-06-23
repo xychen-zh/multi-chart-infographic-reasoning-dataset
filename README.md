@@ -2,7 +2,7 @@
 
 ## 1. 数据集简介
 
-本数据集采用 HuggingFace Dataset 格式存储，样本信息保存在 `test.parquet` 文件中，huggingface 链接为 <https://huggingface.co/datasets/xychen-zh/multi-chart-infographic-reasoning>，每条样本包含：
+本数据集采用 HuggingFace Dataset 格式存储，链接为 <https://huggingface.co/datasets/xychen-zh/multi-chart-infographic-reasoning>，样本信息保存在 `test.parquet` 文件中，每条样本包含：
 
 * 图片路径（image_path）
 * 图表类型（chart_types）
